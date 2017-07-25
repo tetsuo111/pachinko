@@ -1,0 +1,137 @@
+/*************************
+*クラス命名規約(BEM使用)
+*Block__Element
+*Block--Modifire
+*Block__Element--Modifire
+**************************/
+.flame{
+	border: 2px solid grey;
+	background: url("../img/orange.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 1020px;
+	margin-right: auto;
+	margin-left: auto;
+}
+/**************
+***flame-header
+***************/
+.flame-header{
+	height: 50px;
+	text-align: center;
+}
+.flame-header__title-image{
+	position: relative;
+	top: 25px;
+}
+/**************
+***flame-content
+***************/
+.flame-content{
+	background: white;
+	border: 1px solid grey;
+	margin: 120px 40px 40px 40px;
+	padding: 5% 5%;
+	overflow: hidden;
+	background: url("../img/halftone.png");
+	border-radius: 20px;
+	max-height: 100%;
+}
+.flame-content__ud-center{
+	display: flex;
+	display:-ms-flexbox;/*--- IE10 ---*/
+	justify-content: center;
+	-ms-flex-pack:justify;/*--- IE10 ---*/
+	align-items: center;
+}
+.flame-content-logo{
+	float: left;
+	/*-18度回転*/
+	-webkit-transform: rotate(18deg);
+	-ms-transform: rotate(-18deg);
+	transform: rotate(-18deg);
+}
+.flame-content-logo__logo{
+	color: red;
+	font-size: 90px;
+	margin: 0;
+}
+.flame-content-logo__logo--is-center{
+	padding-left: 40px;
+}
+.flame-content-image{
+	box-sizing: border-box;
+	text-align: right;
+	display: flex;
+	display:-ms-flexbox;/*--- IE10 ---*/
+	justify-content: center;
+	-ms-flex-pack:justify;/*--- IE10 ---*/
+	align-items: center;
+	width: 50%;
+}
+.flame-content-image__image-is-1{
+	width: 40%;
+}
+.flame-content__text{
+	font-size: 40px;
+	font-weight: bold;
+	margin: 10px 10px 15px 40px;
+}
+.flame-content__text--is-red{
+	color: red;
+}
+.flame-content__btn{
+	display: block;
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+	width: 250px;
+	height: 50px;
+	text-align: center;
+	background-position: center;
+	padding: 20px 20px 0px 20px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 30px;
+	cursor: pointer;
+	border: 1px solid orange;
+	background-color: orange;
+	background-image: -webkit-linear-gradient(top, orange, orange);
+	background-image: linear-gradient(to bottom, orange, orange);
+	-webkit-transition: none;
+	transition: none;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+	line-height: 30px;
+	border-bottom: solid 5px #bc8d38;
+	margin-top: 10%;
+}
+.flame-content__btn:active{
+	-ms-transform: translateY(4px);
+	-webkit-transform: translateY(4px);
+	transform: translateY(4px);
+	border-bottom: none;
+}
+/**************
+***flame-footer
+***************/
+.flame-footer{
+	overflow: hidden;
+	text-align: center;
+	margin-bottom: 5%;
+}
+.flame-footer__img--is-1{
+	float: left;
+	margin-left: 5%;
+}
+/**************
+***右端ボタン
+***************/
+#corner-left{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100px;
+	width: 100px;
+	cursor: pointer;
+}

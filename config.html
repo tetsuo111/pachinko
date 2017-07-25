@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>sign_in</title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function($){
+				$('#submit').on('click',function(){
+					//オブジェクトにデータを保存する
+					var data = new Object;
+					data.code = $("#code").val();
+					data.password = $("#password").val();
+					//JSON形式に変換
+					var str = JSON.stringify(data);
+					//localStorageに保存
+					localStorage.setItem("datalist",str);
+				});
+				return false;
+			});
+		</script>
+	</head>
+	<body>
+		<form action="page2.html" method="post" id="form">
+			<fieldset>
+				<legend>画面設定</legend>
+				<label>コード</label>
+				<input type="text" name="店舗コード" value="" id="code">
+				<label>パスワード</label>
+				<input type="text" name="店舗パスワード" value="" id="password">
+				<input type="submit" name="sign_in" value="登録" id="submit">
+			</fieldset>
+		</form>
+	</body>
+</html>

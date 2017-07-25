@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head lang="ja">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=10" />
+		<title>待ち受け画面</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//config画面で入力した値を取得
+				var datalist = localStorage.getItem("datalist");
+				if(!datalist){
+					window.location.href="config.html"
+				}
+				var count = null;
+				$("#corner-left").click(function(){
+					count++;
+					if(count == 3){
+						window.location.href = "config.html"
+					}
+					return false;
+				});
+			});
+			const nextScene = function(){
+				document.location.href = "page4.html";
+			}
+			$(document).keypress(function(e){
+				if(e.charCode == 13){
+					return false;
+				}else if(e.charCode == 48 ){
+					sound();
+					setTimeout(nextScene , 5000);
+				}else{
+					sound();
+				}
+			});
+			function sound(){
+				document.getElementById("sound-file").play();
+			}
+		</script>
+	</head>
+	<body>
+		<!--音声ファイルの再生  -->
+		<audio id="sound-file" preload="auto">
+			<source src="coin.mp3" type="audio/mp3">
+		</audio>
+		<div id="corner-left"></div>
+		<div class="wrapper">
+			<div class="flame">
+				<div class="flame-header">
+					<img alt="来店ポイント" src="img/title.png" height="50" width="940" class="flame-header__title-image">
+				</div>
+				<div class="flame-content flame-content__ud-center">
+					<div class="flame-content-logo">
+						<p class="flame-content-logo__logo">ポイント</p>
+						<p class="flame-content-logo__logo flame-content-logo__logo--is-center">GET!</p>
+					</div>
+					<div class="flame-content-image">
+						<img alt="コイン" src="img/coin.png" class="flame-content-image__image-is-1">
+						<img alt="スマホ" src="img/smartphone.png" class="flame-content-image__image-is-1">
+						<img alt="ペンギン" src="img/pengin.png" class="flame-content-image__image-is-1">
+					</div>
+				</div>
+				<div class="flame-footer">
+					<img alt="出玉" src="img/dedama.png" class="flame-footer__img--is-1" height="100" width="150">
+					<img src="img/title2.png" alt="QR会員証" height="50" width="700" class="flame-footer__img--is-2">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head lang="ja">
+		<meta charset="utf-8">
+		<title>ログインに失敗しました</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<script type="text/javascript">
+			var pageout = function(){
+				window.location.href = "page2.html";
+			}
+			window.onload = function(){
+				setTimeout(pageout , 5000);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="flame">
+				<div class="flame-header">
+				</div>
+				<div class="flame-content">
+					<p class="flame-content__text">QR会員証が不正です。</p>
+					<p class="flame-content__text">会員番号を確認してください。</p>
+					<a href="page2.html" class="flame-content__btn">戻る</a>
+				</div>
+				<div class="flame-footer">
+					<img alt="出玉" src="img/dedama.png" class="flame-footer__img--is-1" height="100" width="150">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
